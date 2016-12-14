@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
+from threading import Thread
+from webcrawler.configmanager import ConfigManager
+import os
 
-def get_hmm():
-    """Get a thought."""
-    return 'hmmm...'
+class Controller(Thread):
+    def __init__(self):
+        super().__init__()
+        print(os.path.realpath)
+        self.config=ConfigManager(os.path.realpath)
 
-def hmm():
-    """Contemplation..."""
-    print get_hmm()
+    def run(self):
+        print("ok")
+        pass
